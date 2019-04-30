@@ -1,11 +1,8 @@
 FROM python:3.7.0-alpine3.7
 
-MAINTAINER "TechnologiesINFRABRADocker@int.amdocs.com"
-LABEL group="P3WR"
+MAINTAINER "Pedro Pavan"
+LABEL version="1"
 
-ENV http_proxy "http://genproxy.amdocs.com:8080"
-ENV https_proxy "http://genproxy.amdocs.com:8080"
-ENV no_proxy "localhost,127.0.0.1"
 ENV CUSTOM_MESSAGE="Welcome to my Docker!"
 
 WORKDIR /app
