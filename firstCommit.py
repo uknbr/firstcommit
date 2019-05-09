@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    message = "<h2>Hello, Infra. {0}</h2>".format(os.environ['CUSTOM_MESSAGE'])
+    message = "<h2>Hello, {0}!</h2>".format(os.environ['CUSTOM_MESSAGE'])
     return message
 
 @app.route('/info')
