@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "Running Python:"
+echo " * Starting Flask app"
 ./firstCommit.py

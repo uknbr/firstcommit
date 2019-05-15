@@ -3,7 +3,7 @@ import platform
 import os
 import random
 from datetime import datetime
-from flask import Flask
+from flask import Flask, abort
 
 app = Flask(__name__)
 
@@ -36,8 +36,8 @@ def index():
 	if not env_color:
 		env_color = "black"
 
-	index = "<h2>First Commit!</h2>"
-	index += "<font color=\"{}\">Hello, {}.</font>".format(env_color, env_who)
+	index = "<h2>*** First Commit ***</h2>"
+	index += "<font color=\"{}\">Hello, {}!</font>".format(env_color, env_who)
 	return index
 
 @app.route('/info')
@@ -60,5 +60,18 @@ def message():
 		message = "<p>This is default message.</p>"
 	return message
 
+# Liveness
+@app.route('/live')
+def live():
+	return "OK"
+
+# Readiness
+@app.route('/ready')
+def ready():
+	return "OK"
+
 if __name__ == '__main__':
-	app.run(use_reloader=True, host='0.0.0.0', port=1234, debug=True)
+	app_reload = eval(get_config("reload"))
+	app_debug = eval(get_config("debug"))
+	app_port = int(get_config("port"))
+	app.run(use_reloader=app_reload, host='0.0.0.0', port=app_port, debug=app_debug)
