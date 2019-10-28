@@ -1,5 +1,5 @@
 # FirstCommit
-This is a project dedicated to learn more about Docker, which makes use of Python along with Flask.
+This is a project dedicated to learn more about Docker, which makes use of Python along with Flask.\
 It's quite simple, just for testing purpose.
 
 ## Examples:
@@ -16,3 +16,4 @@ $ cd /vagrant/example/v2
 $ ./run.sh
 ```
 
+- **swarm**: soon
