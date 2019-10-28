@@ -1,0 +1,28 @@
+version: '3.0'
+
+services:
+  cache:
+    image: redis:3.2-alpine
+    volumes:
+      - redis_data:/data
+
+  app:
+    image: firstcommit:v2
+    build: .
+    restart: always
+    depends_on:
+      - cache
+    links:
+      - cache
+    environment:
+      - VIRTUAL_HOST=docker
+
+  lb:
+    image: jwilder/nginx-proxy
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+    ports:
+      - 8080:80
+
+volumes:  
+  redis_data:

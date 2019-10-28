@@ -1,10 +1,18 @@
 # FirstCommit
-Welcome to my project.
+This is a project dedicated to learn more about Docker, which makes use of Python along with Flask.
+It's quite simple, just for testing purpose.
 
-## Purpose
-Simple code using Flask to deploy on my container tests, it's really simple!
+## Examples:
 
-### Concepts
-- Environment variables
-- Read text file
-- INI as configuration file
+- **v1**: application to demonstrate Dockerfile and environment variables
+```sh
+$ cd /vagrant/example/v1
+$ ./run.sh
+```
+
+- **v2**: make use of docker compose, Redis, and NginX as load balancer
+```sh
+$ cd /vagrant/example/v2
+$ ./run.sh
+```
+
