@@ -6,13 +6,13 @@ It's quite simple, just for testing purpose.
 
 - **v1**: application to demonstrate Dockerfile and environment variables
 ```sh
-$ cd /vagrant/example/v1
+$ cd ./firstcommit/v1
 $ ./run.sh
 ```
 
 - **v2**: make use of docker compose, Redis, and NginX as load balancer
 ```sh
-$ cd /vagrant/example/v2
+$ cd ./firstcommit/v2
 $ ./run.sh
 ```
 
